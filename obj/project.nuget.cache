@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "i6tMOonvDFw=",
+  "success": true,
+  "projectFilePath": "/home/holyboy/Documents/HolyStudiesC/C#/Projects/C#/BOCACS/ConsoleApp1/BOCACS/BOCACS/BOCACS.csproj",
+  "expectedPackageFiles": [
+    "/home/holyboy/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.4/microsoft.aspnetcore.app.ref.10.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
