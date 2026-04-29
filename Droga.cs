@@ -34,6 +34,7 @@ public class Droga
         if (quantidade > Estoque)
         {
             Console.WriteLine("Estoque insuficiente");
+            return false;
         }
         Estoque -= quantidade;
         return true;

@@ -129,7 +129,12 @@ class Program
         if(droga == null) { Console.WriteLine("Nao encontrada.");}
         Console.WriteLine("Quantidade vendida: ");
         int quantidade = int.Parse(Console.ReadLine());
-        droga.VenderDroga(quantidade);
+        
+        bool vendaOk = droga.VenderDroga(quantidade);
+
+        if (vendaOk)
+        {
+            
         consumidor.AdicionarDivida(quantidade * droga.Preco);
         Console.WriteLine($"Venda registrada com sucesso! Total da divida: R${consumidor.Divida}");
 
@@ -138,6 +143,7 @@ class Program
             Console.WriteLine("Consumidor com divida maior que R$1000.00, você sera morto");
             consumidores.Remove(consumidor);
         }
+        } 
     }
 
     static void PagarDivida()
