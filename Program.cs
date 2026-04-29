@@ -100,7 +100,7 @@ class Program
 
     static void ListarConsumidor()
     {
-        if (consumidores.Count == 0)
+        if (TaVazio())
         {
             Console.WriteLine("nenhum consumidor cadastrado");
             return;
@@ -113,6 +113,10 @@ class Program
 
     static void RegistrarVenda()
     {
+        if(TaVazio()){
+            Console.WriteLine("Não tem consumidores cadastrados.\nPor favor, cadastre um consumidor primeiro!");
+            return;
+        }
         Console.WriteLine("Nome do consumidor: ");
         string nome = Console.ReadLine();
         Consumidor consumidor = consumidores.Find(x => x.Nome == nome);
@@ -138,6 +142,10 @@ class Program
 
     static void PagarDivida()
     {
+        if(TaVazio()){
+            Console.WriteLine("Não tem consumidores cadastrados.\nPor favor, cadastre um consumidor primeiro!");
+            return;
+        }
         Console.WriteLine("Nome do consumidor: ");
         Consumidor consumidor = consumidores.Find(x => x.Nome == Console.ReadLine());
         if (consumidor == null)
@@ -159,5 +167,11 @@ class Program
         Droga droga = drogas.Find(x => x.Nome == nome);
         if (droga == null) Console.WriteLine("Não encontrada");
         else droga.Exibir();
+    }
+    static bool TaVazio(){
+        if (consumidores.Count==0){
+            return true;
+        }
+        return false;
     }
 }
