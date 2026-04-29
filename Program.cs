@@ -123,12 +123,17 @@ class Program
         string nomeDroga = Console.ReadLine();
         Droga droga = drogas.Find(x => x.Nome == nomeDroga);
         if(droga == null) { Console.WriteLine("Nao encontrada.");}
-        
         Console.WriteLine("Quantidade vendida: ");
         int quantidade = int.Parse(Console.ReadLine());
         droga.VenderDroga(quantidade);
         consumidor.AdicionarDivida(quantidade * droga.Preco);
         Console.WriteLine($"Venda registrada com sucesso! Total da divida: R${consumidor.Divida}");
+
+        if (consumidor.Divida >= 1000)
+        {
+            Console.WriteLine("Consumidor com divida maior que R$1000.00, você sera morto");
+            consumidores.Remove(consumidor);
+        }
     }
 
     static void PagarDivida()
