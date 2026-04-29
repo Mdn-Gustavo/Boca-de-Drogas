@@ -16,13 +16,10 @@ public class Droga
         Estoque = estoque;
     }
     // 1 regra - estoque as drogas
+    // Mudar para que ele exiba a quantidade do estoque e possa adicionar quantidade no estoque ao inves de verificar se a quantidade ta la
     public void EntrarEstoqueDrogas(int quantidade)
     {
-        if (Estoque <= quantidade)
-        {
-            Console.WriteLine("Não possuimos essa quantidade de drogas");
-            return;
-        }
+        Console.WriteLine("Atualizando estoque...");
         Estoque += quantidade;
     }
     // 2 regra - vender drogas

@@ -52,7 +52,8 @@ class Program
         string nome = Console.ReadLine();
 
         Console.WriteLine("Preço por unidade: ");
-        string preco = Console.ReadLine();
+        double preco = double.Parse(Console.ReadLine());
+        
 
         Console.WriteLine("Quantidade em estoque: ");
         int estoque = int.Parse(Console.ReadLine());
@@ -140,7 +141,7 @@ class Program
             return;
         }
 
-        Console.WriteLine("Valor pago");
+        Console.WriteLine("Valor pago: ");
         double valor = double.Parse(Console.ReadLine());
         consumidor.PagarDivida(valor);
         Console.WriteLine("Divida paga com sucesso! Valor da divida atual: R$" + consumidor.Divida); 
