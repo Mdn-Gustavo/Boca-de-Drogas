@@ -8,17 +8,17 @@ Academic project developed as an evaluative activity, simulating a fictional and
 
 ## Technologies Used
 
-**Language:** C#
-**Platform:** .NET
-**Interface:** Console (Terminal)
+* **Language:** C#
+* **Platform:** .NET
+* **Interface:** Console (Terminal)
 
 ## Features
 
-**Register drugs (products):** Set name, price, and initial stock.
-**List all products:** View everything currently in stock.
-**Restock:** Add inventory to existing products.
-**Register customers:** Keep track of your "clientele."
-**List consumers and debts:** See all customers and their current balance.
-**Record sales:** Automatically deducts from stock and adds debt to the customer's profile.
-**Payment processing:** Record when debts are paid off.
-**Product Search:** Find specific items by name.
+* **Register drugs (products):** Set name, price, and initial stock.
+* **List all products:** View everything currently in stock.
+* **Restock:** Add inventory to existing products.
+* **Register customers:** Keep track of your "clientele."
+* **List consumers and debts:** See all customers and their current balance.
+* **Record sales:** Automatically deducts from stock and adds debt to the customer's profile.
+* **Payment processing:** Record when debts are paid off.
+* **Product Search:** Find specific items by name.
