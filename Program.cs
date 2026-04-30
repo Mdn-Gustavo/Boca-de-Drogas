@@ -27,7 +27,8 @@ class Program
             Console.WriteLine("0 - Sair");
             Console.Write("Escolha: ");
             
-            if(!int.TryParse(Console.ReadLine(), out opcao));
+            opcao = int.Parse(Console.ReadLine());
+            
             {
                 Console.WriteLine("Numero invalido, tente novamente.");
                 opcao = -1;
@@ -87,7 +88,7 @@ class Program
     {
         Console.WriteLine("Nome da droga: ");
         string nome = Console.ReadLine();
-        Droga droga = drogas.Find(x => x.Nome == nome);
+        Droga droga = drogas.Find(x => x.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase));
         if(droga == null) { Console.WriteLine("Nao encontrada.");
             return;
         }
@@ -136,7 +137,7 @@ class Program
         }
         Console.WriteLine("Nome da droga: ");
         string nomeDroga = Console.ReadLine();
-        Droga droga = drogas.Find(x => x.Nome == nomeDroga);
+        Droga droga = drogas.Find(x => x.Nome.Equals(nomeDroga, StringComparison.OrdinalIgnoreCase));
         if(droga == null) { Console.WriteLine("Nao encontrada.");
             return;
         }
@@ -170,7 +171,8 @@ class Program
             return;
         }
         Console.WriteLine("Nome do consumidor: ");
-        Consumidor consumidor = consumidores.Find(x => x.Nome == Console.ReadLine());
+        string nome = Console.ReadLine();
+        Consumidor consumidor = consumidores.Find(x => x.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase));
         if (consumidor == null)
         {
             Console.WriteLine("Não encontrado");
@@ -191,7 +193,7 @@ class Program
     {
         Console.WriteLine("Nome da droga: ");
         string nome = Console.ReadLine();
-        Droga droga = drogas.Find(x => x.Nome == nome);
+        Droga droga = drogas.Find(x => x.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase));
         if (droga == null) Console.WriteLine("Não encontrada");
         else droga.Exibir();
     }
