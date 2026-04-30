@@ -27,7 +27,11 @@ class Program
             Console.WriteLine("0 - Sair");
             Console.Write("Escolha: ");
             
-            opcao = int.Parse(Console.ReadLine());
+            if(!int.TryParse(Console.ReadLine(), out opcao));
+            {
+                Console.WriteLine("Numero invalido, tente novamente.");
+                opcao = -1;
+            }
 
             //coloquei uma funçao pra cada opcao pra ficar mais goat
             switch (opcao)
@@ -51,10 +55,13 @@ class Program
         Console.WriteLine("Nome da droga: ");
         string nome = Console.ReadLine();
 
-        Console.WriteLine("Preço por unidade: ");
-        double preco = double.Parse(Console.ReadLine());
-        
-
+        // descobri que o double n iria funcionar se colocassemos , (padrao do Brasil) para podermos definir decimais, dai o CultureInfo cuida disso
+        Console.WriteLine("Preço por unidade (gramas): ");
+        if (!double.TryParse(Console.ReadLine(), NumberStyles.Any, CultureInfo.InvariantCulture, out double preco))
+        {
+            Console.WriteLine("Digite um número válido!");
+            return;
+        }
         Console.WriteLine("Quantidade em estoque: ");
         int estoque = int.Parse(Console.ReadLine());
         
@@ -84,8 +91,12 @@ class Program
         if(droga == null) { Console.WriteLine("Nao encontrada.");
             return;
         }
-        Console.WriteLine("Quantidade entrada: ");
-        int quantidade = int.Parse(Console.ReadLine());
+        Console.WriteLine("Quantidade da entrada: ");
+        if (!int.TryParse(Console.ReadLine(), out int quantidade))
+        {
+            Console.WriteLine("Quantidade invalida");
+            return;
+        }
         droga.EntrarEstoqueDrogas(quantidade);
         Console.WriteLine("Estoque atualizado com sucesso!");
     }
@@ -126,9 +137,15 @@ class Program
         Console.WriteLine("Nome da droga: ");
         string nomeDroga = Console.ReadLine();
         Droga droga = drogas.Find(x => x.Nome == nomeDroga);
-        if(droga == null) { Console.WriteLine("Nao encontrada.");}
+        if(droga == null) { Console.WriteLine("Nao encontrada.");
+            return;
+        }
         Console.WriteLine("Quantidade vendida: ");
-        int quantidade = int.Parse(Console.ReadLine());
+        if (!int.TryParse(Console.ReadLine(), out int quantidade))
+        {
+            Console.WriteLine("Quantidade invalida");
+            return;
+        }
         
         bool vendaOk = droga.VenderDroga(quantidade);
 
@@ -161,7 +178,11 @@ class Program
         }
 
         Console.WriteLine("Valor pago: ");
-        double valor = double.Parse(Console.ReadLine());
+        if(!double.TryParse(Console.ReadLine(), NumberStyles.Any, CultureInfo.InvariantCulture, out double valor))
+        {
+            Console.WriteLine("Valor invalido");
+            return;
+        }
         consumidor.PagarDivida(valor);
         Console.WriteLine("Divida paga com sucesso! Valor da divida atual: R$" + consumidor.Divida); 
     }
