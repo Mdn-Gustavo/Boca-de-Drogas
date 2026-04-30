@@ -28,12 +28,8 @@ class Program
             Console.Write("Escolha: ");
             
             opcao = int.Parse(Console.ReadLine());
+            Console.WriteLine();
             
-            
-                Console.WriteLine("Numero invalido, tente novamente.");
-                opcao = -1;
-            
-
             //coloquei uma funçao pra cada opcao pra ficar mais goat
             switch (opcao)
             {
