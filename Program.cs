@@ -3,7 +3,6 @@ using BOCACS;
 
 class Program
 {
-    // arraylist em c# pra guardar as dorgas e consumidores
     
     public static List<Droga> drogas = new List<Droga>();
     public static List<Consumidor> consumidores = new List<Consumidor>();
@@ -30,7 +29,6 @@ class Program
             opcao = int.Parse(Console.ReadLine());
             Console.WriteLine();
             
-            //coloquei uma funçao pra cada opcao pra ficar mais goat
             switch (opcao)
             {
                 case 1: CadastrarDroga(); break;
@@ -52,7 +50,7 @@ class Program
         Console.WriteLine("Nome da droga: ");
         string nome = Console.ReadLine();
 
-        // descobri que o double n iria funcionar se colocassemos , (padrao do Brasil) para podermos definir decimais, dai o CultureInfo cuida disso
+   
         Console.WriteLine("Preço por unidade (gramas): ");
         if (!double.TryParse(Console.ReadLine(), NumberStyles.Any, CultureInfo.InvariantCulture, out double preco))
         {

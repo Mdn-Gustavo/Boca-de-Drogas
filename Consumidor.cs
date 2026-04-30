@@ -1,9 +1,6 @@
 using System.Runtime.CompilerServices;
 
 namespace BOCACS;
-/// <summary>
-/// Até agora pensei no consumidor ter somenente o nome e a divida dele, com isso poderiamos ter 2 funçoes de adicionar e pagar a divida dele, qq ces acham?
-/// </summary>
 public class Consumidor
 {
   public string Nome { get; set; }
